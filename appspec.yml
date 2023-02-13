@@ -1,0 +1,24 @@
+version: 0.0
+os: linux
+files:
+ - source: /
+   destination: /home/ubuntu
+   permissions:
+   - object: /
+     pattern: "**"
+     owner: ubuntu
+     group: ubuntu
+file_exists_behavior: OVERWRITE
+hooks:
+ BeforeInstall:
+   - location: ./shell/beforeInstall.sh
+     timeout: 300
+     runas: ubuntu
+ AfterInstall:
+   - location: ./shell/afterInstall.sh
+     timeout: 300
+     runas: ubuntu
+ ApplicationStart:
+   - location: ./shell/applicationStart.sh
+     timeout: 300
+     runas: ubuntu

@@ -1,0 +1,23 @@
+[Unit]
+Description=services file
+
+
+
+
+
+[Service]
+ExecStart=/usr/bin/node /home/ubuntu/server.js
+WorkingDirectory=/home/ubuntu/
+EnvironmentFile=/etc/environment
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=node-app
+User=ubuntu
+
+
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=cloud-init.target
