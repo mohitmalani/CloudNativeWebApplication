@@ -3,6 +3,7 @@ const app = express();
 const pool = require("./database");
 const bcrypt = require("bcryptjs");
 const { copyDone } = require("pg-protocol/dist/messages");
+var uuid = require('uuid');
 
 app.use(express.json());
 
@@ -19,15 +20,6 @@ app.get("/healthz", (req, res) => {
     res.status(200).json("server responds with 200 OK if it is healhty.", 200);
   } catch (err) {
     res.json(err.message);
-  }
-});
-
-app.get("/gettest", async (req, res) => {
-  try {
-    const allNames = await pool.query("SELECT * FROM healthz");
-    res.json(allNames.rows);
-  } catch (e) {
-    console.error(e.message);
   }
 });
 

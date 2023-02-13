@@ -1,7 +1,6 @@
 {
   "name": "my-express-server",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "NODE_ENV=test jest --testTimeout=10000",
@@ -30,5 +29,6 @@
   },
   "directories": {
     "test": "test"
-  }
+  },
+  "description": ""
 }
