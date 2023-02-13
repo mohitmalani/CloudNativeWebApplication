@@ -1,0 +1,9 @@
+{
+  "ssh_username":"ubuntu",
+  "subnet_id": "subnet-0297e885fb42aa365",
+  "source_ami": "ami-08c40ec9ead489470" ,
+  "vpc_id": "vpc-00cb79ca2a5e0cf6d",
+  "aws_acct_list": ["114443752637"],
+  "zip_file": ""
+}
+
